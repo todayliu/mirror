@@ -1,9 +1,11 @@
-import {dispatch} from './middleware'
+import {dispatch} from './store'
 import {addEffect} from './effects'
 
 const SEP = '/'
 
-export const actions = {}
+export const actions = {
+  dispatch:dispatch
+}
 
 export function addActions(modelName, reducers = {}, effects = {}) {
 

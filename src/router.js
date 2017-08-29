@@ -6,7 +6,7 @@ import createMemoryHistory from 'history/createMemoryHistory'
 import {ConnectedRouter, routerActions} from 'react-router-redux'
 
 import {options} from './defaults'
-import {dispatch} from './middleware'
+import {dispatch} from './store'
 import {actions} from './actions'
 
 let history

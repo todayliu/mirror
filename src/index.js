@@ -7,7 +7,8 @@ import render from './render'
 import hook from './hook'
 import Router from './router'
 import defaults from './defaults'
-
+import middleware from './middlewarex'
+import {getStore} from './store'
 module.exports = {
   model,
   actions,
@@ -15,7 +16,8 @@ module.exports = {
   defaults,
   connect,
   render,
-
+  middleware,
+  getStore,
   Router,
   Route,
   Link,

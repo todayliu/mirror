@@ -8,6 +8,8 @@ export const options = {
 
   // A list of the standard Redux middleware
   middlewares: [],
+  // A list of the standard Redux reduce
+  reduces:{},
 }
 
 const historyModes = ['browser', 'hash', 'memory']
@@ -17,6 +19,7 @@ export default function defaults(opts = {}) {
   const {
     historyMode,
     middlewares,
+    reducers,
   } = opts
 
   if (historyMode && !~historyModes.indexOf(historyMode)) {
@@ -25,6 +28,10 @@ export default function defaults(opts = {}) {
 
   if (middlewares && !Array.isArray(middlewares)) {
     throw new Error(`middlewares "${middlewares}" is invalid, must be an Array!`)
+  }
+
+  if (reducers && Object.prototype.toString.call(reducers)!== '[object Object]') {
+    throw new Error(`middlewares "${reducers}" is invalid, must be an Object!`)
   }
 
   Object.keys(opts).forEach(key => {

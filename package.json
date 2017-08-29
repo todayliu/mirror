@@ -8,7 +8,7 @@
     "test:cov": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "lint": "eslint src test",
-    "build": "rm -rf lib && babel src -d lib --no-comments",
+    "build": "del /q lib && babel src -d lib --no-comments",
     "bundle": "webpack && webpack -p --output-filename mirror.min.js"
   },
   "main": "./lib/index.js",
@@ -33,7 +33,9 @@
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.6",
-    "redux": "^3.6.0"
+    "redux": "^3.6.0",
+    "redux-immutable": "^4.0.0",
+    "rm": "^0.1.8"
   },
   "peerDependencies": {
     "react": "^15.0.0",

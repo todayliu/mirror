@@ -11,7 +11,7 @@ let Root
 
 export default function render(component, container, callback) {
 
-  const {initialState, middlewares} = options
+  const {initialState, middlewares, reduces} = options
 
   if (started) {
 
@@ -25,7 +25,7 @@ export default function render(component, container, callback) {
     }
 
   } else {
-    createStore(models, initialState, middlewares)
+    createStore(models, initialState, middlewares,reduces)
   }
 
   // Use named function get a proper displayName
